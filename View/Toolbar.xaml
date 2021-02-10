@@ -1,0 +1,32 @@
+﻿<UserControl x:Class="AutoskipExample.UserControls.Toolbar"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="720">
+
+    <Menu>
+        <MenuItem Header="_Cast" >
+            <MenuItem Header="_Local" Command="{Binding StartCasting}" CommandParameter="{x:Null}"/>
+
+            <ItemsControl ItemsSource="{Binding CastModel.rendererItems}">
+                <ItemsControl.ItemTemplate>
+                    <DataTemplate>
+                        <TextBlock Text="{Binding Name}">
+                            <TextBlock.InputBindings>
+                                <MouseBinding MouseAction="LeftClick"
+                                              Command="{Binding RelativeSource={RelativeSource FindAncestor, AncestorType={x:Type Window}}, Path=DataContext.StartCasting}" CommandParameter="{Binding}" />
+                            </TextBlock.InputBindings>
+                        </TextBlock>
+                    </DataTemplate>
+                </ItemsControl.ItemTemplate>
+            </ItemsControl>
+
+            <Separator/>
+
+            <MenuItem Header="_Renderers found" IsEnabled="False"/>
+        </MenuItem>
+    </Menu>
+
+</UserControl>

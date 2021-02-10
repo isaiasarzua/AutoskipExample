@@ -1,0 +1,38 @@
+﻿<Project Sdk="Microsoft.NET.Sdk.WindowsDesktop">
+
+	<PropertyGroup>
+		<OutputType>WinExe</OutputType>
+		<TargetFramework>netcoreapp3.0</TargetFramework>
+		<UseWPF>true</UseWPF>
+	</PropertyGroup>
+
+	<PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+		<AllowUnsafeBlocks>true</AllowUnsafeBlocks>
+	</PropertyGroup>
+
+	<ItemGroup>
+		<None Include="AutoskipExample.sln" />
+	</ItemGroup>
+
+	<ItemGroup>
+		<PackageReference Include="Extended.Wpf.Toolkit" Version="4.0.1" />
+		<PackageReference Include="LibVLCSharp" Version="3.4.9" />
+		<PackageReference Include="LibVLCSharp.WPF" Version="3.4.9" />
+		<PackageReference Include="MvvmLightLibs" Version="5.4.1.1" />
+		<PackageReference Include="SixLabors.ImageSharp" Version="1.0.2" />
+		<PackageReference Include="VideoLAN.LibVLC.Windows" Version="3.0.11" />
+		<PackageReference Include="Vlc.DotNet.Wpf" Version="3.1.0" />
+	</ItemGroup>
+
+
+	<PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+		<DebugSymbols>true</DebugSymbols>
+		<DebugType>full</DebugType>
+		<Optimize>false</Optimize>
+		<OutputPath>bin\</OutputPath>
+		<DefineConstants>DEBUG;TRACE</DefineConstants>
+		<ErrorReport>prompt</ErrorReport>
+		<WarningLevel>4</WarningLevel>
+	</PropertyGroup>
+
+</Project>

@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="AutoskipExample.UserControls.VideoControls"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+             mc:Ignorable="d" 
+             d:DesignHeight="20" d:DesignWidth="720">
+
+    <Menu>
+        <MenuItem Header="_Pause" Command="{Binding TogglePause}"/>
+        <MenuItem Header="_Stop" Command="{Binding StopPlayback}"/>
+        <MenuItem Header="_Skip Settings" Command="{Binding SetupSkip}"/>
+        <MenuItem Header="{Binding PlaybackTime}" IsEnabled="False"/>
+        <MenuItem Header="{Binding FileLength}" IsEnabled="False"/>
+    </Menu>
+
+</UserControl>
